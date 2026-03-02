@@ -1,0 +1,13 @@
+Darkness - Deprecation Notice
+==============================
+
+Darkness has been deprecated as of July 2025 due to Google's deprecation
+of Chrome Manifest V2 extensions. The extension is no longer functional.
+
+Updates are published for existing installed users to align the extension
+with its deprecated status.
+
+Changes made:
+- Updated the extension popup to display a deprecation notice
+- Removed references to external services no longer in use
+- No new functionality has been added

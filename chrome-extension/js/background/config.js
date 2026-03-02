@@ -354,7 +354,7 @@ var CONFIG = {
 			key: 'darkness', // Must be the same as the object key
 			name: 'Darkness Website',
 			support: 'full',
-			hostRegExp: new RegExp('^(darkness.app|local.darkness.com)$', 'i'),
+			hostRegExp: new RegExp('^(darkness.invalid)$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Lior Grossman', link: 'https://liorgrossman.com' },
 			],

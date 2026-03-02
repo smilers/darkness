@@ -190,7 +190,7 @@ if (!DarknessSettingsLoader) {
 				$("#drk_paypal_form").trigger("submit");
 			} else if (PAYMENT_PLATFORM == 'stripe') {
 				var checkoutParams = {custom: custom, checksum: SKU};
-				var checkoutDomain = ENVIRONMENT != 'production' ? "http://local.darkness.com:3000" : "https://darkness.app"
+				var checkoutDomain = ''
 				var token = window.btoa(unescape(encodeURIComponent(JSON.stringify(checkoutParams))));
 				var hash = window.btoa(unescape(encodeURIComponent(getHashCode(token.toString()))));
 				var checkoutPage = checkoutDomain + "/secure/pay/?token=" + encodeURIComponent(token+'_'+hash);
@@ -279,7 +279,7 @@ if (!DarknessSettingsLoader) {
 						}, 2500);
 					} else {
 						$dialog.find('.drk_promo_submit').val('Send');
-						var msg = "Error sending promo to server:\n\n" + res.error + "\n\nPlease copy this message and send it to support@darkness.app";
+						var msg = "Error sending promo to server:\n\n" + res.error + "\n\nPlease copy this message and send it to support";
 						alert(msg);
 					}
 				}
@@ -670,29 +670,15 @@ if (!DarknessSettingsLoader) {
 				toggleShare();
 			});
 
-			// Send feedback button
+			// Extension Deprecated: Feedback button disabled
 			$('.drk_settings .drk_feedback_btn').unbind('click').click(function(e) {
 				repEventByUser('user-action', 'feedback-btn-click');
-				var params = {};
-				params['format'] = 1;
-				params['drkVer'] = chrome.runtime.getManifest().version;
-				params['drkType'] = ASSETS.TYPE;
-				params['drkEnv'] = ENVIRONMENT;
-				params['curSite'] = SITE;
-				params['curUrl'] = document.location.href.slice(0, 1000);
-				params['curTheme'] = THEME;
-				if (e.altKey) {
-					console.log("Debugging Information:\n\n" + JSON.stringify(params) + '\n\n' + JSON.stringify(settings) + '\n\n' + JSON.stringify(STATS));
-				}
-				var url = 'https://darkness.app/contact/?darkness_info=' + encodeURIComponent(JSON.stringify(params));
-				var win = window.open(url, '_blank');
-				win.focus();
 			});
 
 			// Privacy policy button
 			$('.drk_settings .drk_privacy_btn').unbind('click').click(function(e) {
 				repEventByUser('user-action', 'feedback-privacy-click');
-				var url = 'https://darkness.app/privacy/darkness-privacy-policy.pdf';
+				var url = 'https://chromewebstore.google.com/detail/darkness-beautiful-dark-t/imilbobhamcfahccagbncamhpnbkaenm';
 				var win = window.open(url, '_blank');
 				win.focus();
 			});
@@ -838,8 +824,6 @@ if (!DarknessSettingsLoader) {
 
 			// Upgrade dialog -> Got promo?
 			$('.drk_show_feature_comparison').unbind('click').click(function(e) {
-				var url = "https://darkness.app/upgrade/";
-				var win = window.open(url, '_blank');
 			});
 
 			// Upgrade dialog -> Got promo?
@@ -900,7 +884,6 @@ if (!DarknessSettingsLoader) {
 
 				showUpgradeDialog();
 
-				var win = window.open('https://darkness.app/payment-canceled/?reason=payment-problem', '_blank');
 			});
 
 			// Why did you cancel payment dialog -> dialog closed
@@ -912,7 +895,6 @@ if (!DarknessSettingsLoader) {
 				repEventByUser(FUNNEL_PREFIX + dialogReason, 'pay-cancel-' + cancelReason);
 				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'pay-cancel-' + cancelReason);
 
-				var win = window.open('https://darkness.app/payment-canceled/?reason=dialog-closed', '_blank');
 			});
 		};
 

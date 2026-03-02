@@ -2,6 +2,8 @@
 
 **IMPORTANT NOTICE:** This extension is **no longer functional** as of July 2025. Google has deprecated Manifest V2 extensions, meaning Darkness cannot be installed or used anymore. This project is now deprecated. [Learn more](./DEPRECATION_NOTICE.md)
 
+To remove Darkness, navigate to `chrome://extensions`, find "Darkness - Beautiful Dark Themes", and click **Remove**.
+
 ---
 
 ## About Darkness (Historical Information)
@@ -78,4 +80,4 @@ Firefox version only: gulp ff
 * Subscribe to my newsletter for updates: [LiorGrossman.com](https://liorgrossman.com/)
 
 ##  Misc
-Darkness is licensed [GPLv3](./LICENSE). Privacy policy available [here](https://darkness.app/privacy/darkness-privacy-policy.pdf)
+Darkness is licensed [GPLv3](./LICENSE).

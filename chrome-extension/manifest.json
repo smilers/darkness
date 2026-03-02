@@ -4,9 +4,9 @@
   "name": "__MSG_appFullName__",
   "short_name": "__MSG_appShortName__",
   "description": "__MSG_appDescription__",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "author": "Darkness",
-  "homepage_url": "https://github.com/liorgrossman/darkness",
+  "homepage_url": "",
   "default_locale": "en",
   "icons": {
     "16": "images/darkness-icon-16px.png",

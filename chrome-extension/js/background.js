@@ -586,17 +586,7 @@ var loadAllAssetsToCache = function(debug, callback) {
 
 // Initialize Darkness' configuration
 var initializeConfiguration = function() {
-	// Chrome runtime configuration setup
-	chrome.runtime.setUninstallURL("https://darkness.app/uninstalled/");
-
-	chrome.runtime.onInstalled.addListener(function(details) {
-		log("Chrome invoked onInstalled: ", details);
-		if (details && details.reason == "install") {
-			chrome.tabs.create({ url: "https://darkness.app/thank-you/" }, function(tab) {
-				log("Thank you page opened");
-			});
-		}
-	});
+	// Extension Deprecated: Removed install and uninstall page handlers
 
 	// Define which themes are free
 	for (var i in CONFIG.themes) {

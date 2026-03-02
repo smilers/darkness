@@ -51,10 +51,10 @@ var StatsFactory = function() {
 		}
 		var statsJson = JSON.stringify(statsToSave);
 		var cookie = {
-			url: "https://darkness.app",
+			url: "",
 			name: "darkness_stats",
 			value: statsJson,
-			domain: "darkness.app",
+			domain: "",
 			path: "/",
 			expirationDate: 2051222400,
 			/* Year 2035 */

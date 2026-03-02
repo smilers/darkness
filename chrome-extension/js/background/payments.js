@@ -209,7 +209,7 @@ var PaymentsFactory = function() {
 				});
 			}
 		};
-		sendHttpPostRequest('https://lifehacklabs.org/api/' + _appName + '/check-promo-code', params, onServerResponse);
+		sendHttpPostRequest('', params, onServerResponse);
 	};
 
 	// PUBLIC FUNCTION: Get the SKU
@@ -417,7 +417,7 @@ var PaymentsFactory = function() {
 				return logError("No data found in response", res);
 			}
 		};
-		sendHttpPostRequest('https://lifehacklabs.org/api/' + _appName + '/check-user-paypal-status', params, onServerResponse);
+		sendHttpPostRequest('', params, onServerResponse);
 	};
 
 
